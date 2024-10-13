@@ -14,7 +14,7 @@ use App\Http\Controllers\RumahController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/register', [RumahController::class, 'index']);
 
 Auth::routes();
