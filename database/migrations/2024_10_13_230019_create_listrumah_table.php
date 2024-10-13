@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up()
 {
-    Schema::create('users', function (Blueprint $table) {
+    Schema::create('listrumah', function (Blueprint $table) {
         $table->id();
         $table->string('name');
-        $table->string('email')->unique();
-        $table->string('password');
-        $table->enum('role', ['admin', 'user'])->default('user');
+        $table->string('location');
+        $table->decimal('price', 10, 2);
+        $table->enum('status', ['available', 'booked', 'inactive'])->default('available');
         $table->timestamps();
     });
 }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('listrumah');
     }
 };
